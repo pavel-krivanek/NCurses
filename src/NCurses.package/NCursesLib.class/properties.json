@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "FFILibrary",
+	"category" : "NCurses",
+	"classinstvars" : [ ],
+	"pools" : [
+		"NCursesConstants"
+	],
+	"classvars" : [
+		"TypeMap"
+	],
+	"instvars" : [ ],
+	"name" : "NCursesLib",
+	"type" : "normal"
+}

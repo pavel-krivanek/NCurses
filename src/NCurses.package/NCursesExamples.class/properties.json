@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "NCurses",
+	"classinstvars" : [ ],
+	"pools" : [
+		"NCursesConstants"
+	],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "NCursesExamples",
+	"type" : "normal"
+}
