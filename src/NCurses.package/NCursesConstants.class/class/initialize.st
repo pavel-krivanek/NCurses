@@ -3,4 +3,9 @@ initialize
 
 	"self initialize."
 	
-	self initializeMouseConstnats.
+	self initializeACSConstnats.
+	self initializeButtonConstnats.
+	self initializeColorConstnats.
+	self initializeKeyConstnats.
+	self initializeOtherConstnats.
+	

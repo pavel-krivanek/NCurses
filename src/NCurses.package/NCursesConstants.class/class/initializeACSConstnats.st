@@ -1,0 +1,28 @@
+as yet unclassified
+initializeACSConstnats
+	
+	ACS_BLOCK := 16r0.
+	ACS_BOARD := 16r0.
+	ACS_BTEE := 16r0.
+	ACS_BULLET := 16r0.
+	ACS_CKBOARD := 16r0.
+	ACS_DARROW := 16r0.
+	ACS_DEGREE := 16r0.
+	ACS_DIAMOND := 16r0.
+	ACS_HLINE := 16r0.
+	ACS_LANTERN := 16r0.
+	ACS_LARROW := 16r0.
+	ACS_LLCORNER := 16r0.
+	ACS_LRCORNER := 16r0.
+	ACS_LTEE := 16r0.
+	ACS_PLMINUS := 16r0.
+	ACS_PLUS := 16r0.
+	ACS_RARROW := 16r0.
+	ACS_RTEE := 16r0.
+	ACS_S1 := 16r0.
+	ACS_S9 := 16r0.
+	ACS_TTEE := 16r0.
+	ACS_UARROW := 16r0.
+	ACS_ULCORNER := 16r0.
+	ACS_URCORNER := 16r0.
+	ACS_VLINE := 16r0.
