@@ -1,3 +1,4 @@
 printing
 print: aString on: aWindow
-	^self ffiCall: #(int wprintw(window * aWindow, char * aString) )
+
+	^self ffiCall: #(bool has_colors())
