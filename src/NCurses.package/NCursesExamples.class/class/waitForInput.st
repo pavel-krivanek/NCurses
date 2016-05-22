@@ -1,19 +1,9 @@
 as yet unclassified
 waitForInput
 
-	| lib key win  |
-
-
-	lib := NCursesLib uniqueInstance.
-	win := lib initscr.
-	lib keypad: true on: win.
+	| key |
 	
-	lib print: 'Hello world!'.
-	lib refresh.
-		
-	lib timeout: 0.
-	[key := lib getch.
-	key = -1] whileTrue: [ 10 milliSecond wait. Processor yield. ]. 
-
-	lib endwin.
-	^ key
+	[key := NCursesLib uniqueInstance getch.
+	key = -1] whileTrue: [ 
+		"allow smalltalk interrupt"
+		10 milliSecond wait. Processor yield. ].
