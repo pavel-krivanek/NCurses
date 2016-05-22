@@ -7,22 +7,19 @@ windowsSimple
 	win := lib initscr.
 	lib clear.
 	
-"	lib bkgdset: ($. asInteger )."
-	lib print: 'screen'.
+	lib print: 'press any key'.
 	lib refresh.
 		
 	localWin := lib newwin_lines: 5 cols: 15 y: 5 x: 5.
-	
-"	lib bkgdset: ($# asInteger) on: win."
 
 	lib border: localWin.
-	lib print: 'local window' at: 1@1 on: localWin.
+	lib print: 'local window' at: 2@2 on: localWin.
 
 	lib refresh: localWin.
-
-	2 seconds wait.
+	
+	self waitForInput.
 
 	lib delwin: localWin.
-	
+
 	lib endwin.
 	

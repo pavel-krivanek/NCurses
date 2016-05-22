@@ -2,6 +2,7 @@ as yet unclassified
 initializeOtherConstnats
 
 	ALL_MOUSE_EVENTS := 16r7FFFFFF.
+	KEY_MOUSE := 16r199. 
 	EOF := 16rFFFFFFFF.
 	ERR := 16rFFFFFFFF.
 	FALSE := 16r0.

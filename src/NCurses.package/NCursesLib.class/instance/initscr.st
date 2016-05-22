@@ -1,3 +1,3 @@
-as yet unclassified
+windows
 initscr 
 	^self ffiCall: #(window* initscr(void) )

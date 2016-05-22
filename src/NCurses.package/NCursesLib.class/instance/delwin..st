@@ -1,4 +1,4 @@
-as yet unclassified
+windows
 delwin: aWindow 
 
 	^ self ffiCall: #(int delwin (window * aWindow))

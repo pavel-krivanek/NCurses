@@ -1,4 +1,4 @@
-as yet unclassified
+borders
 wborder: aWindow ls: ls rs: rs ts: ts bs: bs tl: tl tr: tr bl: bl br: br
 	^ self
 		ffiCall:

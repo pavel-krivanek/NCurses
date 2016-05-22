@@ -76,7 +76,7 @@ int    leaveok(WINDOW *, bool);
 int    scrollok(WINDOW *, bool);
 nt    setscrreg(int, int);
 int    wsetscrreg(WINDOW *, int, int);
-
+int    deleteln(void);
 
 --------------------------------------------------------------------
 
@@ -132,7 +132,7 @@ int    copywin(const WINDOW *, WINDOW *, int, int, int, int, int, int,
 
 
 int    delay_output(int);
-int    deleteln(void);
+
 void   delscreen(SCREEN *); 
 int    delwin(WINDOW *);
 WINDOW *derwin(WINDOW *, int, int, int, int);

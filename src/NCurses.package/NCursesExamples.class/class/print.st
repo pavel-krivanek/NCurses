@@ -21,7 +21,7 @@ print
 		lib print: (pangram value asUTF8Bytes, #[0]) at: i@(i+2).
 	].
 	lib refresh.
-	4 seconds wait.
+	self waitForInput.
 
 	lib endwin.
 	

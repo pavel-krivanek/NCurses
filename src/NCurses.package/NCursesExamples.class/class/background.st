@@ -1,10 +1,10 @@
 as yet unclassified
 background
 
-	| lib win |
+	| lib screen win |
 
 	lib := NCursesLib uniqueInstance.
-	win := lib initscr.
+	screen := lib initscr.
 	lib clear.
 	
 "	lib bkgdset: ($. asInteger )."
@@ -24,5 +24,7 @@ background
 
 	lib delwin: win.
 	
-	lib endwin.
+	self waitForInput.
+	
+	screen endwin.
 	
