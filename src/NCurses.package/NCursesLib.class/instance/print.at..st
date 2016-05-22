@@ -1,4 +1,4 @@
 printing
 print: aString at: aPoint
 	
-	^ self print: aString atY: aPoint y x: aPoint x.
+	^ self print: aString atY: (aPoint y-1) x: (aPoint x-1).

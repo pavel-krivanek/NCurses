@@ -1,11 +1,87 @@
-Done:
+http://pubs.opengroup.org/onlinepubs/7908799/xcurses/curses.h.html
+
+DONE:
 
 int    addch(const chtype);
 int    mvaddch(int, int, const chtype);
 int    mvwaddch(WINDOW *, int, int, const chtype);
 int    waddch(WINDOW *, const chtype);
+int    attroff(int);
+int    attron(int);
+int    attrset(int);
+int    wattroff(WINDOW *, int);
+int    wattron(WINDOW *, int);
+int    wattrset(WINDOW *, int);
+int    beep(void);
+int    flash(void);
+int    clear(void);
+int    wclear(WINDOW *);
+int    clrtobot(void);
+int    wclrtobot(WINDOW *);
+int    clrtoeol(void);
+int    wclrtoeol(WINDOW *);
+int    delch(void);
+int    mvdelch(int, int);
+int    mvwdelch(WINDOW *, int, int);
+int    wdelch(WINDOW *);
+int    erase(void);
+int    werase(WINDOW *);
+int    start_color(void);
+int    curs_set(int);
+int    move(int, int);
+int    wmove(WINDOW *, int, int);
+int    mvcur(int, int, int, int);
+int    getch(void);
+int    mvwgetch(WINDOW *, int, int);
+int    cbreak(void); 
+int    echo(void);
+int    halfdelay(int);
+int    intrflush(WINDOW *, bool);
+int    keypad(WINDOW *, bool);
+int    meta(WINDOW *, bool);
+int    nl(void);
+int    nocbreak(void);
+int    nodelay(WINDOW *, bool);
+int    noecho(void);
+int    nonl(void);
+void   noqiflush(void);
+int    noraw(void);
+int    notimeout(WINDOW *, bool);
+void   qiflush(void);
+int    raw(void);
+void   timeout(int);
+void   wtimeout(WINDOW *, int);
+int    def_prog_mode(void);
+int    def_shell_mode(void);
+int    reset_prog_mode(void);
+int    reset_shell_mode(void);
+int    resetty(void);
+int    savetty(void);
+int    napms(int);
+int    printw(char *, ...);
+int    mvprintw(int, int, char *,  ...);
+int    mvwprintw(WINDOW *, int, int, char *, ...);
+int    doupdate(void);
+int    refresh(void);
+int    wrefresh(WINDOW *);
+int    wnoutrefresh(WINDOW *);
+bool   can_change_color(void);
+void   filter(void);
+bool   has_colors(void);
+bool   has_ic(void);
+bool   has_il(void);
+void   use_env(bool);
+int    clearok(WINDOW *, bool);
+int    leaveok(WINDOW *, bool);
+int    scrollok(WINDOW *, bool);
+nt    setscrreg(int, int);
+int    wsetscrreg(WINDOW *, int, int);
+
+
+--------------------------------------------------------------------
 
 NOT COMPLETE:
+
 int    addchstr(const chtype *);
 int    addchnstr(const chtype *, int);
 int    mvaddchstr(int, int, const chtype *);
@@ -15,7 +91,7 @@ int    mvwaddchstr(WINDOW *, int, int, const chtype *);
 int    waddchstr(WINDOW *, const chtype *);
 int    waddchnstr(WINDOW *, const chtype *, int);
 
-
+NOT RESOLVED:
 
 int    addnstr(const char *, int);
 int    addnwstr(const wchar_t *, int);
@@ -24,15 +100,13 @@ int    add_wch(const cchar_t *);
 int    add_wchnstr(const cchar_t *, int);
 int    add_wchstr(const cchar_t *);
 int    addwstr(const wchar_t *);
-int    attroff(int);
-int    attron(int);
-int    attrset(int);
+
 int    attr_get(attr_t *, short *, void *);
 int    attr_off(attr_t, void *);
 int    attr_on(attr_t, void *);
 int    attr_set(attr_t, short, void *);
-int    baudrate(void);
-int    beep(void);
+
+
 int    bkgd(chtype);
 void   bkgdset(chtype);
 int    bkgrnd(const cchar_t *);
@@ -44,53 +118,47 @@ int    border_set(const cchar_t *, const cchar_t *, const cchar_t *,
                   const cchar_t *, const cchar_t *);
 int    box(WINDOW *, chtype, chtype);
 int    box_set(WINDOW *, const cchar_t *, const cchar_t *);
-bool   can_change_color(void);
-int    cbreak(void); 
+
+
 int    chgat(int, attr_t, short, const void *);
-int    clearok(WINDOW *, bool);
-int    clear(void);
-int    clrtobot(void);
-int    clrtoeol(void);
+
+
 int    color_content(short, short *, short *, short *);
 int    COLOR_PAIR(int);
 int    color_set(short,void *);
 int    copywin(const WINDOW *, WINDOW *, int, int, int, int, int, int,
                int);
-int    curs_set(int);
-int    def_prog_mode(void);
-int    def_shell_mode(void);
+
+
+
 int    delay_output(int);
-int    delch(void);
 int    deleteln(void);
 void   delscreen(SCREEN *); 
 int    delwin(WINDOW *);
 WINDOW *derwin(WINDOW *, int, int, int, int);
-int    doupdate(void);
+
 WINDOW *dupwin(WINDOW *);
-int    echo(void);
+
 int    echochar(const chtype);
 int    echo_wchar(const cchar_t *);
 int    endwin(void);
 char   erasechar(void);
-int    erase(void);
 int    erasewchar(wchar_t *);
-void   filter(void);
-int    flash(void);
+
+
 int    flushinp(void);
 chtype getbkgd(WINDOW *);
 int    getbkgrnd(cchar_t *);
 int    getcchar(const cchar_t *, wchar_t *, attr_t *, short *, void *);
-int    getch(void);
+
 int    getnstr(char *, int);
 int    getn_wstr(wint_t *, int);
 int    getstr(char *);
 int    get_wch(wint_t *);
 WINDOW *getwin(FILE *);
 int    get_wstr(wint_t *);
-int    halfdelay(int);
-bool   has_colors(void);
-bool   has_ic(void);
-bool   has_il(void);
+
+
 int    hline(chtype, int);
 int    hline_set(const cchar_t *, int);
 void   idcok(WINDOW *, bool);
@@ -113,7 +181,7 @@ int    insstr(const char *);
 int    instr(char *);
 int    ins_wch(const cchar_t *);
 int    ins_wstr(const wchar_t *);
-int    intrflush(WINDOW *, bool);
+
 int    in_wch(cchar_t *);
 int    in_wchnstr(cchar_t *, int);
 int    in_wchstr(cchar_t *);
@@ -123,13 +191,13 @@ bool   is_linetouched(WINDOW *, int);
 bool   is_wintouched(WINDOW *);
 char   *keyname(int);
 char   *key_name(wchar_t);
-int    keypad(WINDOW *, bool);
+
 char   killchar(void);
 int    killwchar(wchar_t *);
-int    leaveok(WINDOW *, bool);
+
 char   *longname(void);
-int    meta(WINDOW *, bool);
-int    move(int, int);
+
+
 
 
 int    mvaddnstr(int, int, const char *, int);
@@ -140,8 +208,8 @@ int    mvadd_wchnstr(int, int, const cchar_t *, int);
 int    mvadd_wchstr(int, int, const cchar_t *);
 int    mvaddwstr(int, int, const wchar_t *);
 int    mvchgat(int, int, int, attr_t, short, const void *);
-int    mvcur(int, int, int, int);
-int    mvdelch(int, int);
+
+
 int    mvderwin(WINDOW *, int, int);
 int    mvgetch(int, int);
 int    mvgetnstr(int, int, char *, int);
@@ -167,7 +235,7 @@ int    mvin_wch(int, int, cchar_t *);
 int    mvin_wchnstr(int, int, cchar_t *, int);
 int    mvin_wchstr(int, int, cchar_t *);
 int    mvinwstr(int, int, wchar_t *);
-int    mvprintw(int, int, char *,  ...);
+
 int    mvscanw(int, int, char *, ...);
 int    mvvline(int, int, chtype, int);
 int    mvvline_set(int, int, const cchar_t *, int);
@@ -180,8 +248,7 @@ int    mvwadd_wchnstr(WINDOW *, int, int, const cchar_t *, int);
 int    mvwadd_wchstr(WINDOW *, int, int, const cchar_t *);
 int    mvwaddwstr(WINDOW *, int, int, const wchar_t *);
 int    mvwchgat(WINDOW *, int, int, int, attr_t, short, const void *);
-int    mvwdelch(WINDOW *, int, int);
-int    mvwgetch(WINDOW *, int, int);
+
 int    mvwgetnstr(WINDOW *, int, int, char *, int);
 int    mvwgetn_wstr(WINDOW *, int, int, wint_t *, int);
 int    mvwgetstr(WINDOW *, int, int, char *);
@@ -206,22 +273,13 @@ int    mvwin_wch(WINDOW *, int, int, cchar_t *);
 int    mvwin_wchnstr(WINDOW *, int, int, cchar_t *, int);
 int    mvwin_wchstr(WINDOW *, int, int, cchar_t *);
 int    mvwinwstr(WINDOW *, int, int, wchar_t *);
-int    mvwprintw(WINDOW *, int, int, char *, ...);
 int    mvwscanw(WINDOW *, int, int, char *, ...);
 int    mvwvline(WINDOW *, int, int, chtype, int);
 int    mvwvline_set(WINDOW *, int, int, const cchar_t *, int);
-int    napms(int);
+
 WINDOW *newpad(int, int);
 SCREEN *newterm(char *, FILE *, FILE *);
 WINDOW *newwin(int, int, int, int);
-int    nl(void);
-int    nocbreak(void);
-int    nodelay(WINDOW *, bool);
-int    noecho(void);
-int    nonl(void);
-void   noqiflush(void);
-int    noraw(void);
-int    notimeout(WINDOW *, bool);
 int    overlay(const WINDOW *, WINDOW *);
 int    overwrite(const WINDOW *, WINDOW *);
 int    pair_content(short, short *, short *);
@@ -230,29 +288,28 @@ int    pechochar(WINDOW *, chtype);
 int    pecho_wchar(WINDOW *, const cchar_t*);
 int    pnoutrefresh(WINDOW *, int, int, int, int, int, int);
 int    prefresh(WINDOW *, int, int, int, int, int, int);
-int    printw(char *, ...);
+
 int    putp(const char *);
 int    putwin(WINDOW *, FILE *);
-void   qiflush(void);
-int    raw(void);
+
+
 int    redrawwin(WINDOW *);
-int    refresh(void);
-int    reset_prog_mode(void);
-int    reset_shell_mode(void);
-int    resetty(void);
+
+
+
 int    ripoffline(int, int (*)(WINDOW *, int));
-int    savetty(void);
+
 int    scanw(char *, ...);
 int    scr_dump(const char *);
 int    scr_init(const char *);
 int    scrl(int);
 int    scroll(WINDOW *);
-int    scrollok(WINDOW *, bool);
+
 int    scr_restore(const char *);
 int    scr_set(const char *);
 int    setcchar(cchar_t*, const wchar_t*, const attr_t, short,
                 const void*);
-int    setscrreg(int, int);
+i
 SCREEN *set_term(SCREEN *);
 int    setupterm(char *, int, int *);
 int    slk_attr_off(const attr_t, void *);
@@ -273,7 +330,7 @@ int    slk_touch(void);
 int    slk_wset(int, const wchar_t *, int);
 int    standend(void);
 int    standout(void);
-int    start_color(void);
+
 WINDOW *subpad(WINDOW *, int, int, int, int);
 WINDOW *subwin(WINDOW *, int, int, int, int);
 int    syncok(WINDOW *, bool);
@@ -283,7 +340,7 @@ char   *termname(void);
 int    tigetflag(char *);
 int    tigetnum(char *);
 char   *tigetstr(char *);
-void   timeout(int);
+
 int    touchline(WINDOW *, int, int);
 int    touchwin(WINDOW *);
 char   *tparm(char *, long, long, long, long, long, long, long, long,
@@ -292,7 +349,7 @@ int    typeahead(int);
 int    ungetch(int);
 int    unget_wch(const wchar_t);
 int    untouchwin(WINDOW *);
-void   use_env(bool);
+
 int    vid_attr(attr_t, short, void *);
 int    vidattr(chtype);
 int    vid_puts(attr_t, short, void *, int (*)(int));
@@ -311,9 +368,6 @@ int    wadd_wch(WINDOW *, const cchar_t *);
 int    wadd_wchnstr(WINDOW *, const cchar_t *, int);
 int    wadd_wchstr(WINDOW *, const cchar_t *);
 int    waddwstr(WINDOW *, const wchar_t *);
-int    wattroff(WINDOW *, int);
-int    wattron(WINDOW *, int);
-int    wattrset(WINDOW *, int);
 int    wattr_get(WINDOW *, attr_t *, short *, void *);
 int    wattr_off(WINDOW *, attr_t, void *);
 int    wattr_on(WINDOW *, attr_t, void *);
@@ -328,16 +382,12 @@ int    wborder_set(WINDOW *, const cchar_t *, const cchar_t *,
                   const cchar_t *, const cchar_t *, const cchar_t *,
                   const cchar_t *, const cchar_t *, const cchar_t *);
 int    wchgat(WINDOW *, int, attr_t, short, const void *);
-int    wclear(WINDOW *);
-int    wclrtobot(WINDOW *);
-int    wclrtoeol(WINDOW *);
 void   wcursyncup(WINDOW *);
 int    wcolor_set(WINDOW *, short, void *);
-int    wdelch(WINDOW *);
 int    wdeleteln(WINDOW *);
 int    wechochar(WINDOW *, const chtype);
 int    wecho_wchar(WINDOW *, const cchar_t *);
-int    werase(WINDOW *);
+
 int    wgetbkgrnd(WINDOW *, cchar_t *);
 int    wgetch(WINDOW *);
 int    wgetnstr(WINDOW *, char *, int);
@@ -365,19 +415,18 @@ int    win_wch(WINDOW *, cchar_t *);
 int    win_wchnstr(WINDOW *, cchar_t *, int);
 int    win_wchstr(WINDOW *, cchar_t *);
 int    winwstr(WINDOW *, wchar_t *);
-int    wmove(WINDOW *, int, int);
-int    wnoutrefresh(WINDOW *);
+
 int    wprintw(WINDOW *, char *, ...);
 int    wredrawln(WINDOW *, int, int);
-int    wrefresh(WINDOW *);
+
 int    wscanw(WINDOW *, char *, ...);
 int    wscrl(WINDOW *, int);
-int    wsetscrreg(WINDOW *, int, int);
+
 int    wstandend(WINDOW *);
 int    wstandout(WINDOW *);
 void   wsyncup(WINDOW *);
 void   wsyncdown(WINDOW *);
-void   wtimeout(WINDOW *, int);
+
 int    wtouchln(WINDOW *, int, int, int);
 wchar_t *wunctrl(cchar_t *);
 int    wvline(WINDOW *, chtype, int);

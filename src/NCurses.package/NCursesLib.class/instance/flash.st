@@ -1,4 +1,4 @@
-beep
+signals
 flash
 
 	"flash the screen"

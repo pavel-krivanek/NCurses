@@ -1,4 +1,4 @@
-beep
+signals
 beep
 
 	"audible signal"
