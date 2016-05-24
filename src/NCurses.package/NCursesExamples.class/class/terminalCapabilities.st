@@ -16,7 +16,7 @@ terminalCapabilities
 	
 	lib print: str.
 	lib refresh.
-	4 seconds wait.
+	self waitForInput.
 	
 	lib endwin.
 	

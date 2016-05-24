@@ -15,6 +15,8 @@ mouse
 	lib mousemask: ALL_MOUSE_EVENTS old: 0.
 		
 	lib timeout: 0.
+	
+		NCursesLib uniqueInstance flushinp.
 	[
 		key := lib getch.
 		(key = KEY_MOUSE)
@@ -24,13 +26,10 @@ mouse
 				lib getmouse: evt.
 				lib moveAt: 1@3. 
 				lib deleteln.
-				lib print: 'position: ', (evt x asString), '@', (evt y asString).
-				
-					].
+				lib print: 'position: ', (evt x asString), '@', (evt y asString).].
+			
 	((key = -1) or: [(key = KEY_MOUSE)])] whileTrue: [ 10 milliSecond wait. Processor yield. ]. 
-	
-	
-	key.
+		NCursesLib uniqueInstance flushinp.
 
 	lib endwin.
 	^ evt

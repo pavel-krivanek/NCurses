@@ -1,30 +1,28 @@
 as yet unclassified
 background
 
-	| lib screen win |
+	| lib localWin win |
 
 	lib := NCursesLib uniqueInstance.
-	screen := lib initscr.
+	win := lib initscr.
+	
+	lib bkgdset: ($. asInteger ).
 	lib clear.
-	
-"	lib bkgdset: ($. asInteger )."
-	lib print: 'custom background 1'.
 	lib refresh.
+	
+	lib print: 'press any key'.
 		
-	win := lib newwin_lines: 5 cols: 15 y: 5 x: 5.
-	
-"	lib bkgdset: ($# asInteger) on: win."
+	localWin := lib newwin_lines: 5 cols: 15 y: 5 x: 5.
 
-	lib border: win.
-	lib print: 'custom background 2' on: win.
+	lib border: localWin.
+	lib print: 'local window' at: 2@2 on: localWin.
 
-	lib refresh.
-
-	2 seconds wait.
-
-	lib delwin: win.
+	lib refresh: localWin.
 	
 	self waitForInput.
+
+	lib delwin: localWin.
 	
-	screen endwin.
-	
+
+
+	lib endwin.

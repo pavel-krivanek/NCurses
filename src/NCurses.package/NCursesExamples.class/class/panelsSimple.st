@@ -32,5 +32,6 @@ panelsSimple
 	panelLib update_panels.
 	lib doupdate.
 	lib flash.
-	1 seconds wait.
+	
+	self waitForInput.
 	lib endwin
