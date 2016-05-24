@@ -1,4 +1,4 @@
-as yet unclassified
+examples
 background
 
 	| lib localWin win |
@@ -22,6 +22,7 @@ background
 	self waitForInput.
 
 	lib delwin: localWin.
+	lib bkgdset: (Character space asInteger ).
 	
 
 

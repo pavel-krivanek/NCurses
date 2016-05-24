@@ -77,6 +77,14 @@ int    scrollok(WINDOW *, bool);
 nt    setscrreg(int, int);
 int    wsetscrreg(WINDOW *, int, int);
 int    deleteln(void);
+int    endwin(void);
+char   erasechar(void);
+int    flushinp(void);
+chtype inch(void);
+WINDOW *initscr(void);
+int    standend(void);
+int    standout(void);
+char   *longname(void);
 
 --------------------------------------------------------------------
 
@@ -141,12 +149,12 @@ WINDOW *dupwin(WINDOW *);
 
 int    echochar(const chtype);
 int    echo_wchar(const cchar_t *);
-int    endwin(void);
-char   erasechar(void);
+
+
 int    erasewchar(wchar_t *);
 
 
-int    flushinp(void);
+
 chtype getbkgd(WINDOW *);
 int    getbkgrnd(cchar_t *);
 int    getcchar(const cchar_t *, wchar_t *, attr_t *, short *, void *);
@@ -164,10 +172,10 @@ int    hline_set(const cchar_t *, int);
 void   idcok(WINDOW *, bool);
 int    idlok(WINDOW *, bool);
 void   immedok(WINDOW *, bool);
-chtype inch(void);
+
 int    inchnstr(chtype *, int);
 int    inchstr(chtype *);
-WINDOW *initscr(void);
+
 int    init_color(short, short, short, short);
 int    init_pair(short, short, short);
 int    innstr(char *, int);
@@ -195,7 +203,6 @@ char   *key_name(wchar_t);
 char   killchar(void);
 int    killwchar(wchar_t *);
 
-char   *longname(void);
 
 
 
@@ -328,8 +335,7 @@ int    slk_restore(void);
 int    slk_set(int, const char *, int);
 int    slk_touch(void);
 int    slk_wset(int, const wchar_t *, int);
-int    standend(void);
-int    standout(void);
+
 
 WINDOW *subpad(WINDOW *, int, int, int, int);
 WINDOW *subwin(WINDOW *, int, int, int, int);

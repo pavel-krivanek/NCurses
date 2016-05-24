@@ -1,4 +1,4 @@
-as yet unclassified
+examples
 panelsSimple
 
 	| lines cols y x lib panelLib wins panels |

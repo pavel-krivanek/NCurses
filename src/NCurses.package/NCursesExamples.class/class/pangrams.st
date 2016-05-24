@@ -1,4 +1,4 @@
-as yet unclassified
+support
 pangrams
 	^ OrderedCollection new
 		add: 'English' -> 'the quick brown fox jumps over the lazy dog';

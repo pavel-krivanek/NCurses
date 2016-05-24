@@ -1,4 +1,4 @@
-as yet unclassified
+examples
 terminalCapabilities
 
 	| lib screen str |
@@ -12,6 +12,8 @@ terminalCapabilities
 		s << 'hasIC: ' << lib hasIC asString ; lf.
 		s << 'hasIL: ' << lib hasIL asString ; lf.
 		s << 'baudrate: ' << lib baudrate asString ; lf.
+		s << 'termname: ' << lib termname asString ; lf.
+		s << 'longname: ' << lib longname asString ; lf.
 	].
 	
 	lib print: str.

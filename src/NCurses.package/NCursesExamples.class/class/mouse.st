@@ -1,4 +1,4 @@
-as yet unclassified
+examples
 mouse
 
 	| lib key win evt |
@@ -12,7 +12,7 @@ mouse
 	lib print: 'To exit press any key.'.
 	lib refresh.
 	
-	lib mousemask: ALL_MOUSE_EVENTS old: 0.
+	lib mousemask: (ALL_MOUSE_EVENTS | REPORT_MOUSE_POSITION) old: 0.
 		
 	lib timeout: 0.
 	
