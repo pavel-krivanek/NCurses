@@ -6,26 +6,36 @@ colors
 
 	lib := NCursesLib uniqueInstance.
 	win := lib initscr.
+	
+	lib start_color.
+	
+	0 to: 7 do: [ :i |		
+				lib init_pair: i foreground: i background: i+1\\7.
+		].	
+					
 	lib clear.
 		
-	{A_ALTCHARSET. A_ATTRIBUTES. A_BLINK. A_BOLD. A_CHARTEXT. A_COLOR. A_DIM. A_INVIS. A_PROTECT. A_REVERSE. A_STANDOUT. A_UNDERLINE} do: [ :attr |
-		lib addch: (($B asInteger bitOr: attr)). ].
 	
-	lib addch: Character lf.
+		1 to: 8 do: [ :i |		
+				lib attron: (lib color_pair: i-1).	
+				lib print: ('color pair ', i asString) at: 1@(i).
+				lib attroff: (lib color_pair: i).
+		].
 
-	lib init_pair: 2 foreground: COLOR_BLACK background: COLOR_RED.
-	lib attron: (lib color_pair: 2).
-	
-	lib attron: A_BOLD.
-	lib print: 'bold'.
-	lib attroff: A_BOLD.
-	lib print: ' normal'.
-
-	self pangrams withIndexDo: [ :pangram :i | 
-		lib print: (pangram value asUTF8Bytes, #[0]) at: i@(i+2).
-	].
 	lib refresh.
+	
 	self waitForInput.
+	
+		lib init_pair: 1 foreground: COLOR_YELLOW background: COLOR_BLACK.
+		lib init_pair: 2 foreground: COLOR_RED background: COLOR_BLACK.	
+	
+	0 to: 7 do: [ :i |		
+				lib init_pair: i foreground: i background: 7-i+1\\7.
+		].	
 
+		
+  lib refresh.
+	self waitForInput.
+	
 	lib endwin.
 	
