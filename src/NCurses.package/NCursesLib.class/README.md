@@ -86,6 +86,13 @@ int    standend(void);
 int    standout(void);
 char   *longname(void);
 
+int    wstandend(WINDOW *);
+int    wstandout(WINDOW *);
+int    insertln(void);
+int    winsertln(WINDOW *);
+char   *termname(void);
+
+
 --------------------------------------------------------------------
 
 NOT COMPLETE:
@@ -182,7 +189,7 @@ int    innstr(char *, int);
 int    innwstr(wchar_t *, int);
 int    insch(chtype);
 int    insdelln(int);
-int    insertln(void);
+
 int    insnstr(const char *, int);
 int    ins_nwstr(const wchar_t *, int);
 int    insstr(const char *);
@@ -342,7 +349,7 @@ WINDOW *subwin(WINDOW *, int, int, int, int);
 int    syncok(WINDOW *, bool);
 chtype termattrs(void);
 attr_t term_attrs(void);
-char   *termname(void);
+
 int    tigetflag(char *);
 int    tigetnum(char *);
 char   *tigetstr(char *);
@@ -410,7 +417,7 @@ int    winnstr(WINDOW *, char *, int);
 int    winnwstr(WINDOW *, wchar_t *, int);
 int    winsch(WINDOW *, chtype);
 int    winsdelln(WINDOW *, int);
-int    winsertln(WINDOW *);
+
 int    winsnstr(WINDOW *, const char *, int);
 int    wins_nwstr(WINDOW *, const wchar_t *, int);
 int    winsstr(WINDOW *, const char *);
@@ -428,8 +435,7 @@ int    wredrawln(WINDOW *, int, int);
 int    wscanw(WINDOW *, char *, ...);
 int    wscrl(WINDOW *, int);
 
-int    wstandend(WINDOW *);
-int    wstandout(WINDOW *);
+
 void   wsyncup(WINDOW *);
 void   wsyncdown(WINDOW *);
 
