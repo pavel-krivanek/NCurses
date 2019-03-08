@@ -1,10 +1,17 @@
 Class {
 	#name : #NCursesMouseEvent,
 	#superclass : #FFIExternalStructure,
+	#classVars : [
+		'OFFSET_BSTATE',
+		'OFFSET_ID',
+		'OFFSET_X',
+		'OFFSET_Y',
+		'OFFSET_Z'
+	],
 	#pools : [
 		'NCursesConstants'
 	],
-	#category : 'NCurses'
+	#category : #NCurses
 }
 
 { #category : #'as yet unclassified' }

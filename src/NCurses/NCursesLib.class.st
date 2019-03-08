@@ -1508,7 +1508,7 @@ NCursesLib >> typehead: fd [
 
 { #category : #library }
 NCursesLib >> unixModuleName [
-	^ '/lib/libncursesw.so.5.9'
+	^ './i386-linux-gnu/libncurses.so.5.9'
 ]
 
 { #category : #'terminal capabilities' }

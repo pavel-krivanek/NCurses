@@ -10,6 +10,7 @@ Class {
 { #category : #examples }
 NCursesExamples class >> background [
 
+	<example>
 	| lib localWin win |
 
 	lib := NCursesLib uniqueInstance.
@@ -41,6 +42,7 @@ NCursesExamples class >> background [
 { #category : #examples }
 NCursesExamples class >> colors [
 
+	<example>
 	| lib win |
 
 
@@ -85,6 +87,7 @@ NCursesExamples class >> colors [
 { #category : #examples }
 NCursesExamples class >> input [
 
+	<example>
 	| lib win stringPointer s |
 
 
@@ -115,6 +118,7 @@ NCursesExamples class >> input [
 { #category : #examples }
 NCursesExamples class >> mouse [
 
+	<example>
 	| lib key win evt |
 
 
@@ -152,6 +156,7 @@ NCursesExamples class >> mouse [
 { #category : #examples }
 NCursesExamples class >> panelsSimple [
 
+	<example>
 	| lines cols y x lib panelLib wins panels |
 
 	lines := 10.
@@ -190,6 +195,7 @@ NCursesExamples class >> panelsSimple [
 
 { #category : #support }
 NCursesExamples class >> pangrams [
+	<example>
 	^ OrderedCollection new
 		add: 'English' -> 'the quick brown fox jumps over the lazy dog';
 		add: 'Czech' -> 'Příliš žluťoučký kůň úpěl ďábelské ódy.';
@@ -208,6 +214,7 @@ NCursesExamples class >> pangrams [
 { #category : #examples }
 NCursesExamples class >> print [
 
+	<example>
 	| lib win |
 
 
@@ -243,6 +250,7 @@ NCursesExamples class >> print [
 { #category : #examples }
 NCursesExamples class >> terminalCapabilities [
 
+	<example>
 	| lib screen str |
 
 	lib := NCursesLib uniqueInstance.
@@ -270,6 +278,7 @@ NCursesExamples class >> terminalCapabilities [
 { #category : #support }
 NCursesExamples class >> waitForInput [
 
+	<example>
 	| key |
 	
 	NCursesLib uniqueInstance flushinp.
@@ -285,6 +294,7 @@ NCursesExamples class >> waitForInput [
 { #category : #examples }
 NCursesExamples class >> windowsSimple [
 
+	<example>
 	| lib localWin win |
 
 	lib := NCursesLib uniqueInstance.
